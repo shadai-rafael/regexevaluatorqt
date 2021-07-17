@@ -22,6 +22,15 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+
+    //seting default values to edit target line
+    ui->targetEdit->setMaxLength(500);
+    ui->targetEdit->setPlaceholderText("introduce a text");
+
+    //seting default values to edit regex line
+    ui->regexEdit->setMaxLength(300);
+    ui->regexEdit->setPlaceholderText("introduce a regular expresion");
+
 }
 
 Widget::~Widget()
