@@ -21,20 +21,36 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
+    reng = new RegexEngineSTD();
     ui->setupUi(this);
 
-    //seting default values to edit target line
+    //setting default values to edit target line
     ui->targetEdit->setMaxLength(500);
     ui->targetEdit->setPlaceholderText("introduce a text");
 
-    //seting default values to edit regex line
+    //setting default values to edit regex line
     ui->regexEdit->setMaxLength(300);
     ui->regexEdit->setPlaceholderText("introduce a regular expresion");
+
+    //setting default values to edit regex outcome
+    ui->regexOutcome->setReadOnly(true);
+
+    connect(ui->evaluate,&QPushButton::clicked,this,[&](){
+        std::stringstream ss;
+        reng->setRegex(ui->regexEdit->text().toStdString());
+        reng->setTarget(ui->targetEdit->text().toStdString());
+        auto matches = reng->obtainMatches();
+        for (auto str : matches){
+            ss<<str<<std::endl;
+        }
+        ui->regexOutcome->setPlaceholderText(QString::fromStdString(ss.str()));
+    });
 
 }
 
 Widget::~Widget()
 {
     delete ui;
+    delete reng;
 }
 

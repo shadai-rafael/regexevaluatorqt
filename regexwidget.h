@@ -8,7 +8,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-
+#include "regexenginestd.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
@@ -23,5 +23,6 @@ public:
 
 private:
     Ui::Widget *ui;
+    RegexEngine * reng;
 };
 #endif // WIDGET_H
