@@ -13,16 +13,6 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <widget class="QTextBrowser" name="regexOutcome">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>721</width>
-     <height>201</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="evaluate">
    <property name="geometry">
     <rect>
@@ -80,6 +70,16 @@
    </property>
    <property name="text">
     <string>Regex</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="regexOutcome">
+   <property name="geometry">
+    <rect>
+     <x>63</x>
+     <y>119</y>
+     <width>591</width>
+     <height>311</height>
+    </rect>
    </property>
   </widget>
  </widget>

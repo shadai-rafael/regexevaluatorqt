@@ -35,7 +35,10 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 set(PROJECT_SOURCES
         main.cpp
         regexwidget.cpp
+        regexenginestd.cpp
         regexwidget.h
+        regexengine.h
+        regexenginestd.h
         widget.ui
 )
 
